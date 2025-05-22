@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<configuration>
+  <input>
+    <net-file value="gjilani.net.xml" />
+    <route-files value="routes-alt.rou.xml" />
+  </input>
+  <output>
+    <fcd-output value="optimized_output_fcd.xml" />  
+    <summary-output value="optimized_output_summary.xml" />  
+    <queue-output value="optimized_output_queues.xml" />  
+    <emission-output value="optimized_output_emissions.xml" />  
+    <tripinfo-output value="optimized_output_tripinfo.xml" />  
+  </output>
+  <report>
+    <max-num-vehicles value="300" />
+  </report>
+  <time>
+    <begin value="0" />
+    <end value="800" />
+  </time>
+  <gui_only>
+    <delay value="20" />
+  </gui_only>
+</configuration>

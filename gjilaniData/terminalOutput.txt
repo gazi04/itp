@@ -1,0 +1,165 @@
+python main.py result with out optimization
+
+Time 890s: {
+  'timestamp': 900.0,
+  'vehicle_count': 605,
+  'total_travel_time': 119757.0,
+  'total_waiting_time': 17793.0,
+  'total_co2': 1651493.4873292965,
+  'avg_speed': 6.867043474556215,
+  'avg_travel_time': 197.94545454545454,
+  'avg_waiting_time': 29.4099173553719
+  }
+
+----------------------------------------------------------------------------------------------------------------
+python main.py result with optimized setting turned on
+
+Time 890s: {
+'timestamp': 900.0,
+'vehicle_count': 747,
+'total_travel_time': 198686.0,
+'total_waiting_time': 53293.0,
+'total_co2': 1993824.0017517672,
+'avg_speed': 4.885343061221563,
+'avg_travel_time': 265.9785809906292,
+'avg_waiting_time': 71.34270414993307
+}
+
+----------------------------------------------------------------------------------------------------------------
+Generating first comparisons with the data of Gjilan
+
+(venv) ➜  smartCity git:(main) ✗ python compare_solutions.py 
+
+=== Traffic Simulation Comparison Statistics ===
+Total CO2 Emissions (mg):
+  Original: 1057961834.30
+  Optimized: 1163490424.72
+  Reduction: -9.97%
+Average CO2 per Vehicle (mg):
+  Original: 598056.44
+  Optimized: 662579.97
+  Reduction: -10.79%
+Average Mean Speed (m/s):
+  Original: 9.28
+  Optimized: 8.04
+  Improvement: -13.41%
+Average Mean Waiting Time (s):
+  Original: 0.77
+  Optimized: 0.67
+  Reduction: 12.48%
+Total Queue Length (m):
+  Original: 422247.48
+  Optimized: 850673.21
+  Reduction: -101.46%
+Average Queue Length per Lane (m):
+  Original: 356.33
+  Optimized: 704.78
+  Reduction: -97.79%
+Average Vehicle Speed (FCD, m/s):
+  Original: 9.03
+  Optimized: 7.34
+  Improvement: -18.71%
+
+=== Main Benefits of the Optimized Solution ===
+1. Reduced CO2 Emissions: The optimized solution reduced total CO2 emissions by -9.97%, indicating a more environmentally friendly traffic flow.
+2. Improved Traffic Flow: The average vehicle speed increased by -13.41% (summary) and -18.71% (FCD), showing better traffic efficiency.
+3. Decreased Waiting Time: Mean waiting time decreased by 12.48%, reducing delays for drivers.
+4. Less Congestion: Total queue length decreased by -101.46%, indicating fewer traffic jams and smoother flow.
+
+These improvements suggest that the optimized solution enhances traffic efficiency, reduces environmental impact, and improves driver experience b
+y minimizing delays and congestion.
+
+Visualizations saved in 'compareResultsGjilan' folder:
+  - compareResultsGjilan/total_metrics_comparison.png
+  - compareResultsGjilan/mean_speed_comparison.png
+  - compareResultsGjilan/mean_waiting_time_comparison.png
+  - compareResultsGjilan/speed_distribution_comparison.png
+  - compareResultsGjilan/vehicle_positions_comparison.png
+
+
+----------------------------------------------------------------------------------------------------------------
+Run main.py simulation with out optimization and changing the sumocfg file to accept only 100 vehicles  
+Time 890s: {
+  'timestamp': 900.0,
+  'vehicle_count': 100,
+  'total_travel_time': 12160.0,
+  'total_waiting_time': 2.0,
+  'total_co2': 298516.5225668751,
+  'avg_speed': 11.934428259536073,
+  'avg_travel_time': 121.6,
+  'avg_waiting_time': 0.02
+}
+
+
+----------------------------------------------------------------------------------------------------------------
+Generating comparison with original that contains only 100 vehicles and the optimized solution with out vehicle limitation
+=== Traffic Simulation Comparison Statistics ===
+Total CO2 Emissions (mg):
+  Original: 254194888.10
+  Optimized: 1163490424.72
+  Reduction: -357.72%
+Average CO2 per Vehicle (mg):
+  Original: 539691.91
+  Optimized: 662579.97
+  Reduction: -22.77%
+Average Mean Speed (m/s):
+  Original: 11.31
+  Optimized: 8.04
+  Improvement: -28.93%
+Average Mean Waiting Time (s):
+  Original: 121.34
+  Optimized: 0.67
+  Reduction: 99.45%
+Total Queue Length (m):
+  Original: 4371.97
+  Optimized: 850673.21
+  Reduction: -19357.43%
+Average Queue Length per Lane (m):
+  Original: 16.75
+  Optimized: 704.78
+  Reduction: -4107.45%
+Average Vehicle Speed (FCD, m/s):
+  Original: 11.43
+  Optimized: 7.34
+  Improvement: -35.75%
+
+=== Main Benefits of the Optimized Solution ===
+1. Reduced CO2 Emissions: The optimized solution reduced total CO2 emissions by -357.72%, indicating a more environmentally friendly traffic flow.
+2. Improved Traffic Flow: The average vehicle speed increased by -28.93% (summary) and -35.75% (FCD), showing better traffic efficiency.
+3. Decreased Waiting Time: Mean waiting time decreased by 99.45%, reducing delays for drivers.
+4. Less Congestion: Total queue length decreased by -19357.43%, indicating fewer traffic jams and smoother flow.
+
+These improvements suggest that the optimized solution enhances traffic efficiency, reduces environmental impact, and improves driver experience by minimizing delays and congestion.
+
+Visualizations saved in 'compareResultsGjilanOriginal100Vehicles' folder:
+  - compareResultsGjilanOriginal100Vehicles/total_metrics_comparison.png
+  - compareResultsGjilanOriginal100Vehicles/mean_speed_comparison.png
+  - compareResultsGjilanOriginal100Vehicles/mean_waiting_time_comparison.png
+  - compareResultsGjilanOriginal100Vehicles/speed_distribution_comparison.png
+  - compareResultsGjilanOriginal100Vehicles/vehicle_positions_comparison.png
+
+
+----------------------------------------------------------------------------------------------------------------
+Improved optimization code (mainIm.py) with sumocfg limited vehicles 700 and with optimization setting off
+Time 890s: {
+  'timestamp': 900.0,
+  'vehicle_count': 605,
+  'total_travel_time': 119757.0,
+  'total_waiting_time': 17793.0,
+  'total_co2': 1651493.4873292965,
+  'avg_speed': 6.867043474556215,
+  'avg_travel_time': 197.94545454545454,
+  'avg_waiting_time': 29.4099173553719
+}
+
+Improved optimization code (mainIm.py) with sumocfg limited vehicles 700 and with optimization setting on
+Time 890s: {
+  'timestamp': 900.0,
+  'vehicle_count': 700,
+  'total_travel_time': 174354.0,
+  'total_waiting_time': 24961.0,
+  'total_co2': 1923657.481063447,
+  'avg_speed': 6.4808100249167975,
+  'avg_travel_time': 249.07714285714286,
+  'avg_waiting_time': 35.65857142857143
+  }

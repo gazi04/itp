@@ -1,0 +1,6 @@
+traci
+sumolib
+numpy
+pandas
+deap
+lxml
